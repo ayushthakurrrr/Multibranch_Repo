@@ -1,5 +1,7 @@
 pipeline {
-    agent aws_agent
+    agent {
+            label "aws_agent"
+        }
 
     stages{
         stage('Build'){
