@@ -31,6 +31,7 @@ pipeline {
     }
 
     post{
+        agent any
         always{
             sh 'echo "Exection done"'
         }
