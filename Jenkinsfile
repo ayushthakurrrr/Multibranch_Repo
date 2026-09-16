@@ -31,15 +31,14 @@ pipeline {
     }
 
     post{
-        agent any
         always{
-            sh 'echo "Exection done"'
+            echo "Exection done"
         }
         success{
-            sh 'echo "Success"'
+            echo "Success"
         }
         failure{
-            sh 'echo "Failure"'
+            echo "Failure"
         }
     }
 }
