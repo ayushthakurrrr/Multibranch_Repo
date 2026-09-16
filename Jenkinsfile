@@ -4,19 +4,27 @@ pipeline {
     stages{
         stage('Build'){
             agent any
-            sh 'echo "Building"'
+            steps{
+                sh 'echo "Building"'
+            }
         }
         stage('Test'){
             agent aws_agent
-            sh 'echo "Testing"'
+            steps{
+                sh 'echo "Testing"'
+            }
         }
         stage('Append'){
             agent any
-            sh 'echo "appended on $BRANCH_NAME" > file1.txt'
+            steps{
+                sh 'echo "appended on $BRANCH_NAME" > file1.txt'
+            }
         }
         stage('Deploy'){
             agent any
-            sh 'echo "Deploying"'
+            steps{
+                sh 'echo "Deploying"'
+            }
         }
     }
 
