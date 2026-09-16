@@ -9,7 +9,9 @@ pipeline {
             }
         }
         stage('Test'){
-            agent aws_agent
+            agent {
+                label "aws_agent"
+            }
             steps{
                 sh 'echo "Testing"'
             }
