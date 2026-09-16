@@ -3,16 +3,24 @@ pipeline {
 
     stages{
         stage('Build'){
-            sh 'echo "Building"'
+            steps{
+                sh 'echo "Building"'
+            }
         }
         stage('Test'){
-            sh 'echo "Testing"'
+            steps{
+                sh 'echo "Testing"'
+            }
         }
         stage('Append'){
-            sh 'echo "appended on $BRANCH_NAME" > file1.txt'
+            steps{
+                sh 'echo "appended on $BRANCH_NAME" > file1.txt'
+            }
         }
         stage('Deploy'){
-            sh 'echo "Deploying"'
+            steps{
+                sh 'echo "Deploying"'
+            }
         }
     }
 
